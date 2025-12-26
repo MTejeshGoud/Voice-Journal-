@@ -1,0 +1,336 @@
+/* src/Styles/Home.css */
+
+.home-page {
+    min-height: 100vh;
+    background-color: #fafaf9;
+    /* stone-50 */
+    color: #1c1917;
+    /* stone-900 */
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e7e5e4;
+    /* stone-200 */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+    max-width: 80rem;
+    /* 7xl */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon-bg {
+    background-color: #ea580c;
+    /* orange-600 */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ea580c, #e11d48);
+    /* orange to rose */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-greeting {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #57534e;
+    /* stone-600 */
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #57534e;
+    /* stone-600 */
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    color: #dc2626;
+    /* red-600 */
+    background-color: #fef2f2;
+    /* red-50 */
+}
+
+.main-content {
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0;
+}
+
+.upload-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f5f5f4;
+    /* stone-100 */
+    margin-bottom: 2rem;
+}
+
+.upload-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.upload-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #292524;
+    /* stone-800 */
+    margin: 0;
+}
+
+.upload-subtitle {
+    color: #78716c;
+    /* stone-500 */
+    margin-top: 0.5rem;
+}
+
+.drop-zone {
+    border: 2px dashed #e7e5e4;
+    /* stone-200 */
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.drop-zone:hover {
+    border-color: #fb923c;
+    /* orange-400 */
+    background-color: rgba(255, 247, 237, 0.3);
+    /* orange-50/30 */
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.upload-icon-circle {
+    width: 4rem;
+    height: 4rem;
+    background-color: #ffedd5;
+    /* orange-100 */
+    color: #ea580c;
+    /* orange-600 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-display {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff7ed;
+    /* orange-50 */
+    color: #c2410c;
+    /* orange-700 */
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.upload-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: #ea580c;
+    /* orange-600 */
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #c2410c;
+    /* orange-700 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:disabled {
+    background-color: #d6d3d1;
+    /* stone-300 */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* History Section */
+.history-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.history-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #292524;
+    /* stone-800 */
+    margin: 0;
+}
+
+.transcript-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #a8a29e;
+    /* stone-400 */
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid #f5f5f4;
+}
+
+.transcript-card {
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #f5f5f4;
+    /* stone-100 */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+.transcript-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.transcript-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.transcript-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.check-icon-bg {
+    padding: 0.75rem;
+    background-color: #fff7ed;
+    /* orange-50 */
+    color: #ea580c;
+    /* orange-600 */
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+    display: flex;
+}
+
+.transcript-filename {
+    font-weight: 600;
+    color: #292524;
+    /* stone-800 */
+    margin: 0;
+}
+
+.transcript-card:hover .transcript-filename {
+    color: #ea580c;
+}
+
+.transcript-text {
+    color: #57534e;
+    /* stone-600 */
+    margin-top: 0.5rem;
+    line-height: 1.625;
+    font-size: 0.875rem;
+}
+
+.transcript-date {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #a8a29e;
+    /* stone-400 */
+    background-color: #fafaf9;
+    /* stone-50 */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+}
