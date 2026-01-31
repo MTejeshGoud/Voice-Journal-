@@ -2,20 +2,24 @@
 description: How to start the full stack application
 ---
 
-This workflow starts the backend (Node.js) and frontend (React/Vite) servers.
+This workflow starts the backend (Node.js), the processing worker (Python Celery), and the frontend (React/Vite).
 
-1. Install backend dependencies (if not already done)
-// turbo
-```bash
-cd backend
-npm install ioredis
-```
+**Prerequisites:**
+- Ensure **Redis** is installed and running on default port 6379.
 
-2. Start the Backend Server
+1. Start the Node.js Backend Server
 // turbo
 ```bash
 cd backend
 node server.js
+```
+
+2. Start the Python Celery Worker
+// turbo
+```bash
+cd backend-py
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\celery.exe -A celery_app.celery_app worker --loglevel=info --pool=solo
 ```
 
 3. Start the Frontend Server

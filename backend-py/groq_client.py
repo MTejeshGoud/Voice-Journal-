@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
+import requests
 
-load_dotenv()
+load_dotenv(encoding="utf-8")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/audio/transcriptions"

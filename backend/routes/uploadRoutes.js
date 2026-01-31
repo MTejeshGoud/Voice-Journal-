@@ -48,11 +48,14 @@ router.post("/upload", authenticateToken, upload.single("audio"), async (req, re
     // 3. Trigger Celery Worker via Python Script
     // Try to find the virtualenv python if it exists, otherwise fallback to system python
     const cwd = path.resolve(__dirname, "../../backend-py");
-    let pythonPath = "python3";
+    // Default based on platform
+    let pythonPath = process.platform === "win32" ? "python" : "python3";
 
-    // Check for common venv paths
-    if (fs.existsSync(path.join(cwd, ".venv/bin/python"))) {
-      pythonPath = ".venv/bin/python";
+    // Check for common venv paths (override default if found)
+    if (fs.existsSync(path.join(cwd, ".venv/Scripts/python.exe"))) {
+      pythonPath = ".venv/Scripts/python.exe"; // Windows venv
+    } else if (fs.existsSync(path.join(cwd, ".venv/bin/python"))) {
+      pythonPath = ".venv/bin/python"; // Unix venv
     }
 
     const command = `${pythonPath} trigger_task.py "${jobId}" "${fileName}"`;
